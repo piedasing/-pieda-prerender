@@ -19,7 +19,7 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, 'src/library.ts'),
             name: '@pieda/prerender',
-            fileName: (format, entry) => `@pieda/prerender.${entry}.${format}.js`,
+            fileName: (format, entry) => `prerender.${entry}.${format}.js`,
             formats: ['es'],
         },
     },
