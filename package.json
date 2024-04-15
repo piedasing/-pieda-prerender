@@ -1,0 +1,37 @@
+{
+    "name": "@pieda/prerender",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/types/library.d.ts",
+                "default": "./dist/prerender/prerender.es.js"
+            }
+        }
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build && tsc --declaration --emitDeclarationOnly",
+        "preview": "vite preview",
+        "prepare": "npm run build",
+        "version:major": "npm version major",
+        "version:minor": "npm version minor",
+        "version:patch": "npm version patch"
+    },
+    "dependencies": {
+        "@prerenderer/prerenderer": "^1.2.4",
+        "@prerenderer/renderer-puppeteer": "^1.2.3"
+    },
+    "devDependencies": {
+        "fs": "^0.0.1-security",
+        "path": "^0.12.7",
+        "typescript": "^5.0.2",
+        "vite": "^5.0.12",
+        "vue-tsc": "^1.4.2"
+    }
+}
