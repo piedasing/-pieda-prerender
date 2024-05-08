@@ -19,7 +19,7 @@
         ".": {
             "import": {
                 "types": "./dist/types/library.d.ts",
-                "default": "./dist/prerender/prerender.es.js"
+                "default": "./dist/prerender.es.js"
             }
         }
     },
