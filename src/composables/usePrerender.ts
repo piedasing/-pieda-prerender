@@ -51,7 +51,7 @@ export const usePrerender = ({
                     renderedRoutes.forEach((renderedRoute) => {
                         const renderedDir = path.join(outputDir, renderedRoute.originalRoute);
                         if (!fs.existsSync(renderedDir)) {
-                            fs.mkdir(renderedDir, 777);
+                            fs.mkdirSync(renderedDir, 777);
                         }
                         fs.writeFileSync(
                             path.join(renderedDir, 'index.html'),
