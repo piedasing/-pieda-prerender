@@ -49,8 +49,12 @@ export const usePrerender = ({
                 })
                 .then((renderedRoutes: any[]) => {
                     renderedRoutes.forEach((renderedRoute) => {
+                        const renderedDir = path.join(outputDir, renderedRoute.originalRoute);
+                        if (fs.existsSync(renderedDir)) {
+                            fs.mkdir(renderedDir, 777);
+                        }
                         fs.writeFileSync(
-                            path.join(outputDir, 'index.html'),
+                            path.join(renderedDir, 'index.html'),
                             renderedRoute.html.trim(),
                         );
                     });
